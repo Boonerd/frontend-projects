@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────
+   LIGHT MODE – Creamy & Warm
+   ────────────────────────────── */
+@layer base {
+  html {
+    @apply bg-cream-100 text-text-light antialiased;
+  }
+  
+  html body {
+    @apply bg-cream-100;
+  }
+}
+
+/* ──────────────────────────────
+   DARK MODE – Deep & Rich
+   ────────────────────────────── */
+@layer base {
+  html.dark {
+    @apply bg-slate-900 text-text-dark;
+  }
+  
+  html.dark body {
+    @apply bg-slate-900;
+  }
+}
+
+/* Smooth transitions */
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+}

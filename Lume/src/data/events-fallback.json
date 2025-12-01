@@ -1,0 +1,50 @@
+[
+  {
+    "id": 101,
+    "title": "Blankets & Wine December Edition",
+    "date": "14 Dec 2025",
+    "location": "Carnivore Grounds",
+    "category": "Music",
+    "price": "KSh 2500"
+  },
+  {
+    "id": 102,
+    "title": "Nairobi Tech Week 2025",
+    "date": "10–12 Jan 2026",
+    "location": "KICC",
+    "category": "Tech",
+    "price": "Free – 5000"
+  },
+  {
+    "id": 103,
+    "title": "Koroga Festival",
+    "date": "28 Dec 2025",
+    "location": "Uhuru Gardens",
+    "category": "Music",
+    "price": "KSh 3000"
+  },
+  {
+    "id": 104,
+    "title": "React Kenya December Meetup",
+    "date": "20 Dec 2025",
+    "location": "iHub Nairobi",
+    "category": "Tech",
+    "price": "Free"
+  },
+  {
+    "id": 105,
+    "title": "Raha Fest NYE",
+    "date": "31 Dec 2025",
+    "location": "Ngong Racecourse",
+    "category": "Party",
+    "price": "KSh 5000"
+  },
+  {
+    "id": 106,
+    "title": "Nairobi Design Week",
+    "date": "5–8 Feb 2026",
+    "location": "Nairobi Gallery",
+    "category": "Art",
+    "price": "KSh 1000"
+  }
+]

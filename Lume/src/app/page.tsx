@@ -102,8 +102,8 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { Icon: Heart, number: "500+", label: "Happy Couples" },
-              { Icon: Calendar, number: "10+", label: "Years Experience" },
+              { Icon: Heart, number: "50+", label: "Happy Couples" },
+              { Icon: Calendar, number: "3+", label: "Years Experience" },
               { Icon: Star, number: "4.9★", label: "Client Rating" },
             ].map(({ Icon, number, label }, i) => (
               <div key={i} className="text-center p-6 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm">

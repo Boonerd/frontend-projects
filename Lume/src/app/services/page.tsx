@@ -1,63 +1,91 @@
 "use client";
 import { motion } from "framer-motion";
-import { Heart, Briefcase, Cake, CheckCircle2 } from "lucide-react";
+import { 
+  HeartPulse,   // wedding rings + heart
+  Briefcase, 
+  CakeSlice, 
+  CheckCircle2 
+} from "lucide-react";
 
 const services = [
   {
     title: "Weddings",
     price: "From KSh 350,000",
-    icon: Heart,
-    features: ["Full planning", "Venue sourcing", "Floral & Decor", "Catering & Cake"],
-    color: "from-pink-500 to-rose-500",
+    icon: HeartPulse, // beautiful wedding rings + heart
+    features: ["Full planning & coordination", "Venue & vendor sourcing", "Floral design & decor", "Catering, cake & bar"],
   },
   {
     title: "Corporate Events",
-    price: "From KSh 500,000",
+    price: "From KSh 200,000",
     icon: Briefcase,
-    features: ["Conferences", "Product launches", "Team building", "Gala dinners"],
-    color: "from-indigo-500 to-purple-500",
+    features: ["Conferences & summits", "Product launches", "Team building retreats", "Annual gala dinners"],
   },
   {
     title: "Private Parties",
-    price: "From KSh 150,000",
-    icon: Cake,
-    features: ["Birthdays", "Anniversaries", "Baby showers", "House parties"],
-    color: "from-emerald-500 to-teal-500",
+    price: "From KSh 50,000",
+    icon: CakeSlice,
+    features: ["Luxury birthdays", "Anniversaries & proposals", "Baby showers", "Intimate house parties"],
   },
 ];
 
 export default function Services() {
   return (
-    <div className="min-h-screen pt-24 pb-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-black mb-4">Our Services</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">Every celebration deserves to shine</p>
-        </div>
+    <div className="min-h-screen pt-32 pb-20 px-6 bg-cream dark:bg-slate-950">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mb-20"
+        >
+          <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+            Our Services
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300">
+            Every celebration deserves to <span className="text-orange-500 font-bold">shine</span>
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((s, i) => (
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {services.map((service, i) => (
             <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={service.title}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              transition={{ delay: i * 0.2, duration: 0.6 }}
+              className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-10 shadow-2xl hover:shadow-orange-300/30 dark:hover:shadow-orange-800/30 transition-all duration-500 border border-orange-200 dark:border-orange-800 overflow-hidden"
             >
-              <div className={`absolute inset-0 bg-linear-to-br ${s.color} opacity-0 group-hover:opacity-10 transition`} />
-              <s.icon className="w-16 h-16 text-indigo-600 mb-6" />
-              <h3 className="text-3xl font-bold mb-3">{s.title}</h3>
-              <p className="text-4xl font-black text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 mb-8">
-                {s.price}
+              {/* Orange glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700" />
+
+              {/* Icon with orange accent */}
+              <div className="relative mb-8">
+                <service.icon className="w-20 h-20 text-orange-500 mx-auto drop-shadow-lg" />
+                <div className="absolute inset-0 bg-orange-400/20 rounded-full blur-3xl -z-10 scale-150" />
+              </div>
+
+              <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-4 text-center">
+                {service.title}
+              </h3>
+
+              <p className="text-4xl font-black text-center mb-10 bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+                {service.price}
               </p>
-              <ul className="space-y-4">
-                {s.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    {f}
+
+              <ul className="space-y-5">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="w-6 h-6 text-orange-500 shrink-0" />
+                    <span className="text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
+
+              {/* Subtle orange ring at bottom */}
+              <div className="mt-10 flex justify-center">
+                <div className="h-1 w-24 bg-gradient-to-r from-transparent via-orange-400 to-transparent rounded-full" />
+              </div>
             </motion.div>
           ))}
         </div>
